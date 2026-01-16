@@ -71,7 +71,7 @@ export const login = async (req, res) => {
 
     return res.json({ success: true, user: { user } });
   } catch (error) {
-    return res.status(500).json({ success: fale, message: error.message });
+    return res.status(500).json({ success: false, message: error.message });
   }
 };
 
