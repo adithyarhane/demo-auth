@@ -15,7 +15,9 @@ const allowedOrigins = ["http://localhost:5173"];
 //middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.use(
+  cors({ origin: "https://demo-auth-sx6a.onrender.com", credentials: true })
+);
 
 app.get("/", (req, res) => {
   res.send("Server running just file!");
