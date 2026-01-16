@@ -1,6 +1,5 @@
 import React from "react";
-
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../context/Auth";
 
 export default function WelcomeScreen() {
   const { userData } = useAuthContext();
