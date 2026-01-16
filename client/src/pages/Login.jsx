@@ -9,7 +9,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../context/Auth";
 
 /* ---------------- PASSWORD STRENGTH CHECKER ---------------- */
 const checkPasswordStrength = (password = "") => {
