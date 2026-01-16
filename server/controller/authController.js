@@ -63,11 +63,10 @@ export const login = async (req, res) => {
     const token = generateToken(user._id);
 
     res.cookie("token", token, {
-      httpOnly: false,
-      secure: process.env.NODE_ENV === "production" ? true : false,
-      sameSite: process.env.NODE_ENV === "production" ? None : "strict",
+      httpOnly: true,
+      secure: true,
+      sameSite: None,
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      domain: ".onrender.com",
     });
 
     return res.json({ success: true, user: { user } });
@@ -87,13 +86,5 @@ export const logout = async (req, res) => {
     return res.json({ success: true, message: "Logged Out!" });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message });
-  }
-};
-
-export const isAuthenticated = async (req, res) => {
-  try {
-    return res.json({ success: true });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
   }
 };
